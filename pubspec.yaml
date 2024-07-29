@@ -99,15 +99,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-  fonts:
-    - family: NanumSquare
-      fonts:
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundB.ttf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundEB.ttf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundL.ttf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundOTFB.otf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundOTFEB.otf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundOTFL.otf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundOTFR.otf
-        - asset: assets/fonts/nanumsquare/NanumSquareRoundR.ttf
 

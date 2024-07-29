@@ -1,8 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:pocket_kish/api_manager.dart';
 import 'package:pocket_kish/app/routes/app_pages.dart';
 
 void main() {
@@ -23,7 +21,6 @@ class MyApp extends StatelessWidget {
             getPages: AppPages.routes,
             theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
-                useMaterial3: true,
-                fontFamily: "NanumSquare")));
+                useMaterial3: true)));
   }
 }

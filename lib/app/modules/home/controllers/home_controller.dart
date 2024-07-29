@@ -3,16 +3,19 @@ import 'package:get/get.dart';
 import '../../../../api_manager.dart';
 import '../../../data/models/lunch_info.dart';
 import '../../../data/models/posts.dart';
-import '../../../ui/widgets/posts_board.dart';
 
 class HomeController extends GetxController {
   final RxString _menuName = RxString("");
   final RxString _menu = RxString("");
-  final RxList<PostsBoard> _postsList = RxList([]);
+  final RxList<Posts> _postsList = RxList([]);
+  final Rxn<Posts> _selectedPost = Rxn();
 
   String get menuName => _menuName.value;
   String get menu => _menu.value;
-  List<PostsBoard> get postsBoardList => _postsList.value;
+  List<Posts> get postsList => _postsList.value;
+  Posts? get selectedPosts => _selectedPost.value;
+
+  set selectedPosts(Posts? posts) => _selectedPost.value = posts;
 
   @override
   void onInit() {
@@ -47,10 +50,8 @@ class HomeController extends GetxController {
       _menu.value = "정보가 없어요!";
     }
 
-    List<PostsBoard> tmpList = [];
-    for (Posts ps in await ApiManager().getLatestPosts()) {
-      tmpList.add(PostsBoard(name: ps.name, postList: ps.getPostList()));
-    }
+    List<Posts> tmpList = await ApiManager().getLatestPosts() as List<Posts>;
+    _selectedPost.value = tmpList[0];
     _postsList.clear();
     _postsList.addAll(tmpList);
   }

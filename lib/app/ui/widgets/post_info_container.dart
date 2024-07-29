@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pocket_kish/app/data/models/post.dart';
 import 'package:pocket_kish/app/ui/themes/app_colors.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class PostInfoContainer extends StatelessWidget {
   final Post post;
@@ -10,6 +11,10 @@ class PostInfoContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        launchUrlString(post.url);
+      },
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 12.h),
         child: Column(

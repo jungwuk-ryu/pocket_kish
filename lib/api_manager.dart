@@ -3,6 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
+import 'app/data/models/lunch_info.dart';
+import 'app/data/models/post.dart';
+import 'app/data/models/posts.dart';
+
 class ApiManager {
   static const String host = "http://www.hanoischool.net";
 
@@ -77,30 +81,5 @@ class ApiManager {
       }
     }
     return liList;
-  }
-}
-
-class LunchInfo {
-  final String day, menuName, menu;
-  LunchInfo({this.day = "", this.menuName = "", this.menu = ""});
-}
-
-class Post {
-  final String title, url, date;
-  Post({this.title = "", this.url = "", this.date = ""});
-}
-
-class Posts {
-  final String name;
-  final List<Post> _posts = [];
-
-  Posts(this.name);
-
-  void addPost(Post p) {
-    _posts.add(p);
-  }
-
-  List<Post> getPostList() {
-    return _posts;
   }
 }

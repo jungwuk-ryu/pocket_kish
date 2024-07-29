@@ -11,7 +11,7 @@ class ApiManager {
   static const String host = "http://www.hanoischool.net";
 
   final dio = Dio(BaseOptions(
-    connectTimeout: const Duration(seconds: 1),
+    connectTimeout: const Duration(seconds: 10),
     responseDecoder: (responseBytes, options, responseBody) =>
         decode(responseBytes),
   ));
